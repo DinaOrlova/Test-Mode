@@ -17,21 +17,12 @@ public class DataGenerator {
         private Registration() {
         }
 
-        public static RegistrationInfo generateActiveUser() {
+        public static RegistrationInfo generateUser(String status) {
             Faker faker = new Faker(new Locale("ru"));
             return new RegistrationInfo(
                     faker.name().username(),
                     faker.internet().password(),
-                    "active"
-            );
-        }
-
-        public static RegistrationInfo generateBlockedUser() {
-            Faker faker = new Faker(new Locale("ru"));
-            return new RegistrationInfo(
-                    faker.name().username(),
-                    faker.internet().password(),
-                    "blocked"
+                    status
             );
         }
     }
